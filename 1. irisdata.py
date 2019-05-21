@@ -25,7 +25,7 @@ y = y.apply(le.fit_transform)
 print('转换后的y：')
 print(y)
 # 配置训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 print('已配置训练集和测试集，测试集占比为20%。')
 # 特征规范化
 scaler = StandardScaler()
@@ -43,7 +43,7 @@ predictions = mlp.predict(X_test)
 print('已预测测试集。')
 print('评估神经网络模型：')
 print('Confusion Matrix评估结果：')
-print(confusion_matrix(y_test,predictions))
+print(confusion_matrix(y_test, predictions))
 print('Classification Report评估结果：')
-print(classification_report(y_test,predictions))
+print(classification_report(y_test, predictions))
 
