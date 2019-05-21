@@ -34,6 +34,7 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 print('已使用StandardScaler将特征规范化。\n')
 
+# 2. 创建神经网络并评估
 print('2. 创建神经网络')
 mlp = MLPClassifier(hidden_layer_sizes=(10, 10, 10), max_iter=1000)
 mlp.fit(X_train, y_train.values.ravel())
