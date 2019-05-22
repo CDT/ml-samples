@@ -9,7 +9,8 @@ mndata = MNIST('dataset')
 train_images, train_labels = mndata.load_training()
 test_images, test_labels = mndata.load_testing()
 # 随机显示一个手写图
-print("载入完成。随机显示一条训练集数据：")
+print("载入完成：%d训练样本，%d测试样本。" % (len(train_images), len(test_images)))
+print("随机显示一条训练集数据：")
 print(mndata.display(
   train_images[random.randrange(0, len(train_images))]
 ))
@@ -23,7 +24,7 @@ print(mndata.display(
 # X_test = scaler.transform(X_test)
 # print("特征规范化完成。")
 print("2. 创建神经网络（类型为Multi-layer Classifier，中间层维度：(5, 5, 5），最大迭代数1000）")
-mlp = MLPClassifier(hidden_layer_sizes=5, max_iter=10, verbose=2)
+mlp = MLPClassifier(hidden_layer_sizes=(50, 50, 50), max_iter=1000, verbose=2)
 print('神经网络训练中...')
 mlp.fit(train_images, train_labels)
 print('神经网络已训练完成。')
